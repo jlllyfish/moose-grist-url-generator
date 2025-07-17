@@ -19,9 +19,6 @@ https://grist.numerique.gouv.fr/api/docs/abc123/tables/Etablissements/records?fi
 ```
 
 **Avec l'outil :** vous sélectionnez simplement "Établissements" → "Type" et vous obtenez directement l'url construite.
-```
-```
-
 Le `{id}` est un placeholder que vous remplacez par "lycée" ou toute autre valeur.
 
 ## 🚀 Comment ça marche ?
