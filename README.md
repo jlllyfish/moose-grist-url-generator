@@ -1,17 +1,17 @@
-# 🔧 Générateur d'URL Grist DSFR
+# 🦌 Moose Générateur d'URL Grist 
 
-> Outil simple pour générer des URLs d'API Grist avec filtres dynamiques
+> Outil pour générer des URLs d'API Grist avec filtres dynamiques et les intégrer dans le champ référentiel avancé de Démarches Simplifiées
 
 ## 🎯 À quoi ça sert ?
 
-Cet outil vous permet de **générer facilement des URLs d'API Grist** pour récupérer des données filtrées. Au lieu de construire manuellement des URLs complexes, vous :
+Cet outil permet de **générer facilement des URLs d'API Grist** pour récupérer des données filtrées. Au lieu de construire manuellement des URLs complexes, vous :
 
 1. **Connectez** votre document Grist
 2. **Sélectionnez** une table et une colonne
 3. **Obtenez** une URL prête à utiliser dans vos applications
 
 **Exemple concret :**
-Vous avez une table "Établissements" avec une colonne "Type" et vous voulez récupérer seulement les LPA.
+Vous avez une table "Établissements" avec une colonne "Type" et vous voulez récupérer seulement les lycées.
 
 **Sans l'outil :** vous devez construire manuellement :
 ```
@@ -121,58 +121,9 @@ python app.py
 - **Testez l'URL** (optionnel) avec une valeur d'exemple
 
 ## 💻 Utiliser l'URL générée
-
-### Dans votre code JavaScript
-```javascript
-// Remplacez {id} par votre valeur
-const url = "https://grist.../records?filter={\"Type\":[\"LPA\"]}";
-
-fetch(url, {
-    headers: {
-        'Authorization': 'Bearer VOTRE_CLE_API'
-    }
-})
-.then(response => response.json())
-.then(data => {
-    console.log(data.records); // Vos données filtrées
-});
-```
-
-### Dans votre code Python
-```python
-import requests
-
-url = "https://grist.../records?filter={\"Type\":[\"LPA\"]}"
-headers = {"Authorization": "Bearer VOTRE_CLE_API"}
-
-response = requests.get(url, headers=headers)
-data = response.json()
-print(data['records'])  # Vos données filtrées
-```
-
-### Dans votre code PHP
-```php
-$url = "https://grist.../records?filter={\"Type\":[\"LPA\"]}";
-$headers = array("Authorization: Bearer VOTRE_CLE_API");
-
-$context = stream_context_create([
-    'http' => [
-        'method' => 'GET',
-        'header' => implode("\r\n", $headers)
-    ]
-]);
-
-$response = file_get_contents($url, false, $context);
-$data = json_decode($response, true);
-print_r($data['records']); // Vos données filtrées
-```
+Voir le tuto Champ référentiel avancé Démarches simplifiées : https://doc.demarches-simplifiees.fr/tutoriels/champ-referentiel-avance-a-configurer
 
 ## 🔧 Fonctionnalités
-
-### Interface
-- ✅ **Design DSFR** - Interface moderne et accessible
-- ✅ **Responsive** - Fonctionne sur mobile et desktop
-- ✅ **Intuitive** - Pas besoin de manuel d'utilisation
 
 ### Fonctionnalités techniques
 - ✅ **Test de clé API** - Vérification automatique de la connexion
@@ -248,4 +199,4 @@ generateur-url-grist/
 
 ---
 
-**Prêt à simplifier vos intégrations API Grist ? 🚀**
+**Draaf Occitanie 🦌 Moose**
