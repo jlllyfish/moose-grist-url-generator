@@ -18,12 +18,11 @@ Vous avez une table "Établissements" avec une colonne "Type" et vous voulez ré
 https://grist.numerique.gouv.fr/api/docs/abc123/tables/Etablissements/records?filter=%7B%22Type%22%3A%5B%22LPA%22%5D%7D
 ```
 
-**Avec l'outil :** vous sélectionnez simplement "Établissements" → "Type" et vous obtenez :
+**Avec l'outil :** vous sélectionnez simplement "Établissements" → "Type" et vous obtenez directement l'url construite.
 ```
-https://grist.numerique.gouv.fr/api/docs/abc123/tables/Etablissements/records?filter={"Type":["{id}"]}
 ```
 
-Le `{id}` est un placeholder que vous remplacez par "LPA" ou toute autre valeur.
+Le `{id}` est un placeholder que vous remplacez par "lycée" ou toute autre valeur.
 
 ## 🚀 Comment ça marche ?
 
