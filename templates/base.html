@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}🦌 Moose{% endblock %}</title>
+    
+    <!-- DSFR CSS dans le bon ordre -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dsfr/css/core.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dsfr/css/accordion.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dsfr/css/dsfr.min.css') }}">
+    
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    
+    <!-- Favicon (optionnel) -->
+    <!-- <link rel="icon" href="{{ url_for('static', filename='dsfr/favicon/favicon.ico') }}"> -->
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Header avec Marianne -->
+    <header class="fr-header">
+        <div class="fr-header__body">
+            <div class="fr-container">
+                <div class="fr-header__body-row">
+                    <div class="fr-header__brand fr-enlarge-link">
+                        <div class="fr-header__brand-top">
+                            <div class="fr-header__logo">
+                                <a href="/" title="Accueil - Moose">
+                                    <p class="fr-logo">
+                                        République<br>Française
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="fr-header__service">
+                            <a href="/" title="Accueil - Moose">
+                                <p class="fr-header__service-title">
+                                    🦌 Moose
+                                </p>
+                            </a>
+                            <p class="fr-header__service-tagline">
+                                Générez des URLs d'API Grist avec filtres
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="fr-container fr-py-4w">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="fr-footer" role="contentinfo">
+        <div class="fr-container">
+            <div class="fr-footer__body">
+                <div class="fr-footer__brand fr-enlarge-link">
+                    <a href="/" title="Retour à l'accueil du site">
+                        <p class="fr-logo">
+                            République<br>Française
+                        </p>
+                    </a>
+                </div>
+                <div class="fr-footer__content">
+                    <p class="fr-footer__content-desc">
+                       🦌 Moose - Outil de génération d'URLs d'API Grist avec filtres
+                    </p>
+                    <ul class="fr-footer__content-list">
+                        <li class="fr-footer__content-item">
+                            <span class="fr-footer__content-text">
+                                DRAAF Occitanie
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DSFR JavaScript -->
+    <script type="module" src="{{ url_for('static', filename='dsfr/js/dsfr.module.min.js') }}"></script>
+    <!-- Alternative CDN si fichiers locaux indisponibles -->
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.11.2/dist/dsfr.module.min.js"></script> -->
+    
+    <!-- JavaScript Custom -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Page non trouvée - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="fr-grid-row fr-grid-row--center">
+    <div class="fr-col-12 fr-col-md-8 fr-col-lg-6">
+        
+        <!-- Alerte d'erreur principale -->
+        <div class="fr-alert fr-alert--error fr-mb-6w">
+            <h1 class="fr-alert__title">
+                Erreur 404 - Page non trouvée
+            </h1>
+            <p class="fr-alert__desc">
+                La page que vous cherchez n'existe pas ou a été déplacée.
+            </p>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="fr-card fr-card--no-arrow">
+            <div class="fr-card__body">
+                <div class="fr-card__content">
+                    <h2 class="fr-card__title">
+                        Que faire ?
+                    </h2>
+                    <div class="fr-card__desc">
+                        <p>Plusieurs possibilités s'offrent à vous :</p>
+                        <ul class="fr-mb-3w">
+                            <li>Vérifiez l'URL dans la barre d'adresse</li>
+                            <li>Utilisez le bouton "Retour" de votre navigateur</li>
+                            <li>Retournez à l'accueil de l'application</li>
+                        </ul>
+                    </div>
+                    <div class="fr-card__footer">
+                        <div class="fr-btns-group fr-btns-group--inline">
+                            <a href="/" class="fr-btn fr-btn--primary">
+                                Retour à l'accueil
+                            </a>
+                            <button type="button" 
+                                    class="fr-btn fr-btn--secondary"
+                                    onclick="history.back()">
+                                Page précédente
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informations supplémentaires -->
+        <div class="fr-card fr-card--no-arrow fr-mt-4w">
+            <div class="fr-card__body">
+                <div class="fr-card__content">
+                    <h3 class="fr-card__title">
+                        Informations techniques
+                    </h3>
+                    <div class="fr-card__desc">
+                        <dl class="fr-metadata">
+                            <dt>Code d'erreur :</dt>
+                            <dd>404 - Not Found</dd>
+                            <dt>URL demandée :</dt>
+                            <dd id="current-url">{{ request.url }}</dd>
+                            <dt>Méthode :</dt>
+                            <dd>{{ request.method }}</dd>
+                            <dt>Timestamp :</dt>
+                            <dd id="timestamp">-</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aide -->
+        <div class="fr-notice fr-notice--info fr-mt-4w">
+            <div class="fr-container">
+                <div class="fr-notice__body">
+                    <p class="fr-notice__title">
+                        Besoin d'aide ?
+                    </p>
+                    <p class="fr-notice__desc">
+                        Si le problème persiste, vérifiez que vous avez correctement configuré votre application 
+                        et que tous les fichiers DSFR sont bien présents.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+// Afficher le timestamp actuel
+document.getElementById('timestamp').textContent = new Date().toLocaleString('fr-FR');
+</script>
+{% endblock %}
