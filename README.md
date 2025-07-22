@@ -8,7 +8,7 @@ Cet outil permet de **générer facilement des URLs d'API Grist** pour récupér
 
 1. **Connectez** votre document Grist
 2. **Sélectionnez** une table et une colonne
-3. **Obtenez** une URL prête à utiliser dans vos applications
+3. **Obtenez** une URL prête à utiliser dans votre champ DS.
 
 **Exemple concret :**
 Vous avez une table "Établissements" avec une colonne "Type" et vous voulez récupérer seulement les lycées.
